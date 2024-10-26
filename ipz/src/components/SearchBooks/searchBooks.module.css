@@ -1,0 +1,128 @@
+.container {
+  padding: 24px;
+  background-color: #fff;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.searchInputContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.searchInput {
+  flex-grow: 1;
+  padding: 8px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+}
+
+.searchFilter {
+  min-width: 100px;
+  padding: 8px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+}
+
+.buttonContainer {
+  margin: 16px 0;
+  display: flex;
+  gap: 10px;
+}
+.buttonContainer2{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.button {
+  background-color: #171717;
+  color: #fff;
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.bookGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .bookGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.wishlistGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+
+.bookCard {
+  padding: 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.bookTitle {
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.bookInfo {
+  color: #666;
+  margin: 8px 0;
+}
+
+.materialIcons {
+  font-family: 'Material Icons';
+}
+
+.wishlistText {
+  margin-left: 8px;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  position: relative;
+  max-width: 500px;
+  width: 90%;
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}

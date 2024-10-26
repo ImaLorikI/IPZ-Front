@@ -5,9 +5,12 @@ import styles from "./loginForm.module.css";
 import { z } from "zod";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { loginUser } from "@/API/Auth/authAPI";
+import { useRouter } from "next/navigation";
 
 export default function LoginForm() {
   const [formData, setFormData] = useState({ email: "", password: "" });
+  const router = useRouter();
 
   const CheckShema = z.object({
     email: z.string().email("Invalid email address"),
@@ -19,17 +22,18 @@ export default function LoginForm() {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
       CheckShema.parse(formData);
-      toast.success('Registration successful!');
+      const response = await loginUser(formData.email, formData.password);
+      
+      toast.success('Login successful!');
+      localStorage.setItem('token', response.token);
+      setFormData({ email: "", password: "" });
+      router.push("/");
     } catch (error) {
-      if (error instanceof z.ZodError) {
-        error.errors.forEach((err) => {
-          toast.error(err.message);
-        });
-      }
+      toast.error(error.response?.data?.message || 'An error occurred during login');
     }
   };
 
@@ -63,7 +67,7 @@ export default function LoginForm() {
             onChange={handleInputChange}
           />
 
-          <button type="submit" className={styles.button}>Register</button>
+          <button type="submit" className={styles.button}>Login</button>
         </form>
         <p className={styles.loginText}>
           Don't have an account? <a href="/registration" className={styles.loginLink}>Register here</a>

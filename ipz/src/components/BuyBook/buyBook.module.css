@@ -1,0 +1,77 @@
+.container {
+  max-width: 448px;
+  margin: 0 auto;
+  padding: 24px;
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+
+.bookInfo{
+    margin-bottom: 16px;
+}
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 16px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #3f3f46;
+}
+
+.input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #d4d4d8;
+  border-radius: 4px;
+}
+
+.fieldset {
+  margin-top: 16px;
+  border:none;
+}
+
+.legend {
+  font-size: 14px;
+  font-weight: 500;
+  color: #3f3f46;
+}
+
+.radioGroup {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+  
+}
+
+.radioInput {
+  margin-right: 8px;
+}
+
+.radioLabel {
+  font-size: 14px;
+  color: #3f3f46;
+}
+
+.button {
+    background-color: #171717;
+    color: #fff;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+.buttonGroup{
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
